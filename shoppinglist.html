@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function addItem() {
+      const item = window.prompt("what do you need to get?");
+      document.writeln("<input type='checkbox'/>" + item + "<br/>");
+
+      const moreItems = window.confirm("add more items?");
+
+      if (moreItems) {
+        addItem();
+      } else {
+        const printList = confirm("print list?");
+        if (printList) {
+          window.print();
+        }
+      }
+    }
+
+    addItem();
+  </script>
+</html>

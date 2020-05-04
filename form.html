@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        height: 100%;
+        background-attachment: fixed;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        color: black;
+        /* background-color: #3298be; */
+        background: linear-gradient(#3298be, #9198e5);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Josefin Sans", sans-serif;
+      }
+
+      form {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: 75px 125px 1fr 200px;
+        grid-gap: 16px;
+      }
+
+      form > h1 {
+        grid-column: 3;
+        text-align: center;
+      }
+
+      input,
+      select,
+      textarea,
+      button,
+      option,
+      div {
+        font-size: 16px;
+        padding: 5px;
+        grid-column: 3 / 4;
+        border-radius: 4px;
+        border: none;
+      }
+
+      button {
+        color: white;
+        transition: 0.5s;
+        background-color: #41a16e;
+        width: 50%;
+        justify-self: center;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+        background-color: #099e4e;
+      }
+
+      label {
+        padding: 5px;
+        text-align: right;
+        grid-column: 2 / 3;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-recaptcha="true"
+      netlify-honeypot="bot-field"
+    >
+      <h1>Let us know what you think!</h1>
+      <div style="display: none;">
+        <label>
+          Don’t fill this out if you're human
+        </label>
+        <input name="bot-field" />
+      </div>
+
+      <label>Your Name: </label>
+      <input type="text" name="name" />
+
+      <label>Your Email: </label>
+      <input type="email" name="email" />
+
+      <label>Your Role: </label>
+      <select name="role">
+        <option value="leader">Leader</option>
+        <option value="follower">Follower</option>
+      </select>
+
+      <label>Message: </label>
+      <textarea name="message"></textarea>
+
+      <label for="picture">Picture:</label>
+      <input type="file" name="picture" id="picture" />
+
+      <label for="smile">Camera man:</label>
+      <input type="file" name="smile" capture="user" accept="image/*" />
+
+      <div data-netlify-recaptcha="true"></div>
+
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>

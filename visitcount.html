@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Counting visits</h1>
+    <div id="visits"></div>
+    <button id="likes" onclick="like()">
+      I like this
+    </button>
+  </body>
+  <script>
+    function cb(response) {
+      document.getElementById("visits").innerText = response.value;
+    }
+
+    async function like() {
+      const request = await fetch(
+        "https://api.countapi.xyz/hit/flamboyant-noether-f4a4e9.netlify.app/likes"
+      );
+      const response = await request.json();
+
+      document.getElementById("likes").innerText =
+        "liked " + response.value + " times";
+    }
+  </script>
+  <script
+    async
+    src="https://api.countapi.xyz/hit/flamboyant-noether-f4a4e9.netlify.app/visits?callback=cb"
+  ></script>
+</html>

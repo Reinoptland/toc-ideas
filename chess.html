@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .board {
+        height: 600px;
+        width: 600px;
+        display: grid;
+        grid-template-rows: repeat(8, 75px);
+        background-color: rgb(206, 184, 142);
+        border: 10px solid rgb(149, 103, 16);
+      }
+
+      .piece {
+        font-size: 2rem;
+      }
+
+      .black {
+        color: black;
+      }
+
+      .white {
+        color: white;
+      }
+
+      .row {
+        grid-row: span 1;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+      }
+
+      .square {
+        text-align: center;
+        padding: 15px;
+      }
+
+      .row:nth-child(even) > :nth-child(odd),
+      .row:nth-child(odd) > :nth-child(even) {
+        background-color: rgb(165, 124, 47);
+      }
+    </style>
+    <script>
+      var dragged;
+      function allowDrop(event) {
+        event.preventDefault();
+      }
+
+      function drag(event) {
+        dragged = event.target;
+      }
+
+      function drop(event) {
+        if (event.target.childNodes[0]) {
+          event.target.removeChild(event.target.childNodes[0]);
+        }
+        event.target.appendChild(dragged);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="board">
+      <div class="row">
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♜</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♞</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♝</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♛</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♚</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♝</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♞</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♜</span
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece black"
+            >♟</span
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+      </div>
+      <div class="row">
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+      </div>
+      <div class="row">
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+      </div>
+      <div class="row">
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+        <div
+          class="square"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+      </div>
+      <div class="row">
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♟</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♟</span
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♜</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♞</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♝</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♛</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♚</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♝</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♞</span
+          >
+        </div>
+        <div class="square" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <span draggable="true" ondragstart="drag(event)" class="piece white"
+            >♜</span
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

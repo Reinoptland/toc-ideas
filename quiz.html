@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Source+Code+Pro:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: 50px auto;
+        grid-gap: 16px;
+        background: #fabf00;
+        font-family: "Righteous", cursive;
+        color: #2c2c2c;
+      }
+
+      header {
+        grid-row: 1;
+        grid-column: 2;
+        text-align: center;
+      }
+
+      main {
+        text-align: center;
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 16px;
+      }
+
+      h2 {
+        grid-row: 1;
+        grid-column: span 2;
+      }
+
+      button {
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #2f9aca;
+        color: white;
+        font-size: 1rem;
+        font-family: "Source Code Pro", monospace;
+        transition: 0.5s;
+        animation-timing-function: ease-in-out;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Quiz
+      </h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>
+          What language is used for styling
+        </h2>
+        <button onclick="this.style.backgroundColor = '#C1564C'">
+          JavaScript
+        </button>
+        <button onclick="this.style.backgroundColor = '#009468'">CSS</button>
+        <button onclick="this.style.backgroundColor = '#C1564C'">HTML</button>
+        <button onclick="this.style.backgroundColor = '#C1564C'">Python</button>
+      </section>
+
+      <section>
+        <h2>
+          What language is used for styling
+        </h2>
+        <button onclick="this.style.backgroundColor = '#C1564C'">
+          JavaScript
+        </button>
+        <button onclick="this.style.backgroundColor = '#009468'">CSS</button>
+        <button onclick="this.style.backgroundColor = '#C1564C'">HTML</button>
+        <button onclick="this.style.backgroundColor = '#C1564C'">Python</button>
+      </section>
+
+      <section>
+        <h2>
+          What language is used for styling
+        </h2>
+        <button onclick="this.style.backgroundColor = '#C1564C'">
+          JavaScript
+        </button>
+        <button onclick="this.style.backgroundColor = '#009468'">CSS</button>
+        <button onclick="this.style.backgroundColor = '#C1564C'">HTML</button>
+        <button onclick="this.style.backgroundColor = '#C1564C'">Python</button>
+      </section>
+    </main>
+  </body>
+</html>

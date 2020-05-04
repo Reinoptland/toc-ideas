@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link
+      href="http://allfont.net/allfont.css?fonts=star-jedi"
+      rel="stylesheet"
+      type="text/css"
+    /> -->
+    <style>
+      @font-face {
+        font-family: "StarJedi";
+        src: url("../fonts/star-jedi.woff");
+      }
+      body {
+        background-color: #120b0e;
+        color: #ffe200;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      button {
+        font-family: "StarJedi", arial;
+        text-align: center;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        height: 25vh;
+        width: auto;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      button {
+        transition: 1s;
+        display: block;
+        margin-bottom: 1rem;
+        background-color: #248ad0;
+        font-size: 1rem;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        color: white;
+      }
+
+      button:hover {
+        border-radius: 10px;
+        padding: 0.5rem 2rem;
+      }
+    </style>
+    <script>
+      async function getResults() {
+        const episodes = [
+          "phantom-menace",
+          "attack-clones",
+          "revenge-sith",
+          "new-hope",
+          "special",
+          "empire-strikes-back",
+          "return-of-jedi",
+          "force-awakens",
+          "last-jedi",
+          "rise-of-skywalker",
+        ];
+
+        const requests = episodes.forEach((episode) =>
+          fetch(
+            `https://api.countapi.xyz/info/flamboyant-noether-f4a4e9.netlify.app/${episode}`
+          )
+            .then((res) => res.json())
+            .then((data) => {
+              document.getElementById(episode).innerHTML =
+                data.value + " votes";
+            })
+        );
+      }
+
+      getResults();
+    </script>
+  </head>
+  <body>
+    <h1>A What is your favorite Starware Movie?</h1>
+    <section>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
+        />
+        <h2>
+          Episode i: <br />
+          The Phantom Menace
+        </h2>
+        <button id="phantom-menace"></button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_.jpg"
+        />
+        <h2>
+          Episode ii: <br />
+          Attack of the Clones
+        </h2>
+        <button id="attack-clones"></button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_UY1200_CR135,0,630,1200_AL_.jpg"
+        />
+        <h2>
+          Episode iii: <br />
+          Revenge of the Sith
+        </h2>
+        <button id="revenge-sith"></button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
+        />
+        <h2>
+          Episode iv: <br />
+          A New Hope
+        </h2>
+        <button id="new-hope"></button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BMjJjMjEwMWEtZDcyNC00ODM3LThhZDctNTU0YzU1ZjQ1MmIyXkEyXkFqcGdeQXVyMjg5NDMwMQ@@._V1_UY1200_CR94,0,630,1200_AL_.jpg"
+        />
+        <h2>
+          The Starwars <br />
+          Holiday Special
+        </h2>
+        <button id="special"></button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
+        />
+        <h2>
+          Episode v: <br />
+          The Empire Strikes Back
+        </h2>
+        <button id="empire-strikes-back"></button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
+        />
+        <h2>
+          Episode vi: <br />
+          Return of the Jedi
+        </h2>
+        <button id="return-of-jedi"></button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_.jpg"
+        />
+        <h2>
+          Episode vii: <br />
+          The Force Awakens
+        </h2>
+        <button id="force-awakens"></button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_.jpg"
+        />
+        <h2>
+          Episode viii: <br />
+          The Last jedi
+        </h2>
+        <button id="last-jedi"></button>
+      </div>
+      <div>
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_.jpg"
+        />
+        <h2>
+          Episode ix: <br />
+          The Rise of Skywalker
+        </h2>
+        <button id="rise-of-skywalker"></button>
+      </div>
+    </section>
+  </body>
+</html>
